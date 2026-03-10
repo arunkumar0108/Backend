@@ -20,6 +20,10 @@
         //Age descending
         var sorted = users.OrderByDescending(x => x.Age);
         Console.WriteLine("Sorted: " + string.Join(" | ", sorted.Select(x => x.Age)));
+
+        //Age descending
+        var eligibleAge = users.Where(x => x.Age >= 18);
+        Console.WriteLine("Eligibled Age: " + string.Join(" | ", eligibleAge.Select(x => x.Age)));
     }
 }
 
