@@ -20,13 +20,13 @@ namespace Backend
             }
         }
 
-        public void Deposit (double amount)
+        public void Deposit (ref double amount)
         {
             if (amount > 0)
             {
                 amount += balance;
                 Console.WriteLine("Deposit successful");
-                Console.WriteLine("");
+                Console.WriteLine(balance);
             }
             else
             {

@@ -31,7 +31,7 @@ class Program
 
         if (double.TryParse(Console.ReadLine(), out amount))
         {
-            practice.Deposit(amount);
+            practice.Deposit(ref amount);
         }
         else
         {
