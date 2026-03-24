@@ -16,20 +16,19 @@ namespace Backend
 
     public class Program
     {
-
         public delegate int MyDelegate(int a, int b);
         public delegate bool Filter(int x);
-        public delegate void Callback();        
+        public delegate void Callback();
 
         // MyDelegate method
         public int Add(int x, int y)
         {
             return x + y;
         }
+
         public int Sub(int x, int y)
         {
             return (x - y);
-
         }
 
         // Normal method to print numbers based on a filter
@@ -51,15 +50,13 @@ namespace Backend
 
         static void Main()
         {
-
             // EventHandler example
-            OrderService order = new OrderService();
-            EmailService email = new EmailService();
-            SmsService sms = new SmsService();
-            order.OnOrderPlaced += email.SendEmail;
-            order.OnOrderPlaced += sms.SendSms;
-            order.PlaceOrder("ORD123");            
-
+            RvsAccountCreate order = new RvsAccountCreate();
+            EmailNotificationService email = new EmailNotificationService();
+            SmsNotificationService sms = new SmsNotificationService();
+            order.OnAccountCreated += email.SendEmail;
+            order.OnAccountCreated += sms.SendSms;
+            order.AccountCreate("RVS Account Number: 246672");
 
             DoWork(() => Console.WriteLine("Work completed!"));
 
@@ -71,8 +68,8 @@ namespace Backend
 
             Program program = new Program();
 
-            MyDelegate del = program.Add;   // store method
-            MyDelegate del1 = program.Sub;   // store method
+            MyDelegate del = program.Add; // store method
+            MyDelegate del1 = program.Sub; // store method
             int result = del(5, 3); // call method
             int result1 = del1(5, 3); // call method
 
@@ -84,7 +81,6 @@ namespace Backend
             int hashCode = name.GetHashCode(); // → oru unique number kedaikum
             Console.WriteLine(hashCode); // e.g: 1823746
 
-
             Calculator calc = new Calculator();
             int calculateResult = calc.Add(10, 5);
             Console.WriteLine(calculateResult);
@@ -94,7 +90,6 @@ namespace Backend
 
             var resultLinq = numbers.Where(x => x > 3).ToList();
             Console.WriteLine(string.Join(", ", resultLinq));
-
 
             // Event handling
             Button btn = new Button();

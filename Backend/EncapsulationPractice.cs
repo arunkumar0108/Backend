@@ -6,8 +6,8 @@ namespace Backend
 {
     public class EncapsulationPractice
     {
-        private double balance; 
-        
+        private double balance;
+
         public double Balance
         {
             get { return balance; }
@@ -16,11 +16,11 @@ namespace Backend
                 if (value > 0)
                 {
                     balance = value;
-                }                
+                }
             }
         }
 
-        public void Deposit (ref double amount)
+        public void Deposit(ref double amount)
         {
             if (amount > 0)
             {

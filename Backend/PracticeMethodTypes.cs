@@ -5,7 +5,6 @@ namespace Backend
 {
     public class PracticeMethodTypes
     {
-
         public void StringTypePractice()
         {
             string trim = "  CSharp  ";
@@ -29,6 +28,6 @@ namespace Backend
             Console.WriteLine(length.Length);
 
             Console.ReadLine();
-        }   
+        }
     }
 }

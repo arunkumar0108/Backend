@@ -4,7 +4,6 @@ using System.Text;
 
 namespace Backend
 {
-
     // Instead of custom delegates, use built-in pattern:
     // EventHandler
     // EventHandler<TEventArgs>
@@ -13,40 +12,40 @@ namespace Backend
     // 2. Easy to extend
     // 3. Clean architecture
 
-    class OrderEventArgs : EventArgs
+    class AccountCreateEventArgs : EventArgs
     {
-        public string? OrderId { get; set; }
+        public string? AccountId { get; set; }
     }
 
     // Publisher
-    class OrderService
+    class RvsAccountCreate
     {
-        public event EventHandler<OrderEventArgs>? OnOrderPlaced;
+        public event EventHandler<AccountCreateEventArgs>? OnAccountCreated;
 
-        public void PlaceOrder(string id)
+        public void AccountCreate(string id)
         {
-            Console.WriteLine("Order created");
+            Console.WriteLine("Account created");
 
-            OnOrderPlaced?.Invoke(this, new OrderEventArgs { OrderId = id });
+            OnAccountCreated?.Invoke(this, new AccountCreateEventArgs { AccountId = id });
         }
     }
 
     // Subscribers
-    class EmailService
+    class EmailNotificationService
     {
-        public void SendEmail(object? sender, OrderEventArgs? e)
+        public void SendEmail(object? sender, AccountCreateEventArgs? e)
         {
-            Console.WriteLine($"Email sent for {e?.OrderId}");
+            Console.WriteLine($"Email sent for {e?.AccountId} from the user");
         }
     }
-    class SmsService
+
+    class SmsNotificationService
     {
-        public void SendSms(object? sender, OrderEventArgs? e)
+        public void SendSms(object? sender, AccountCreateEventArgs? e)
         {
-            Console.WriteLine($"SMS sent for {e?.OrderId}");
+            Console.WriteLine($"SMS sent for {e?.AccountId} from the user");
         }
     }
 
     // Additionaly add logging, inventory update, etc.
 }
-

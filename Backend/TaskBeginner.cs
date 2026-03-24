@@ -15,7 +15,9 @@ namespace Backend
             var Salary = 30000;
             var IsEmployee = true;
 
-            Console.WriteLine($"Name: {Name}\nAge: {Age}\nSalary: {Salary}\nIs Employee: {IsEmployee}\n");
+            Console.WriteLine(
+                $"Name: {Name}\nAge: {Age}\nSalary: {Salary}\nIs Employee: {IsEmployee}\n"
+            );
         }
 
         public void DataTypeTask()
@@ -26,8 +28,9 @@ namespace Backend
             bool isActive = true;
             char letter = 'A';
 
-            Console.WriteLine($"Number: {number}\nPrice: {price}\nLetter: {letter}\nName: {name}\nIsActive: {isActive}\n");
-
+            Console.WriteLine(
+                $"Number: {number}\nPrice: {price}\nLetter: {letter}\nName: {name}\nIsActive: {isActive}\n"
+            );
         }
 
         public void OperatorTask()
@@ -49,7 +52,7 @@ namespace Backend
             Console.Write("Enter your Age: ");
             var eligibleAge = Console.ReadLine();
 
-            if(int.TryParse(eligibleAge, out number))
+            if (int.TryParse(eligibleAge, out number))
             {
                 if (number >= 18)
                 {
@@ -72,7 +75,7 @@ namespace Backend
             Console.Write("Enter a input showing all week days : ");
             var day = Console.ReadLine();
 
-            if(int.TryParse(day, out number))
+            if (int.TryParse(day, out number))
             {
                 switch (number)
                 {
@@ -98,7 +101,9 @@ namespace Backend
                         Console.WriteLine($"{day} : is a Sunday.\n");
                         break;
                     default:
-                        Console.WriteLine($"You entered wrong input = {day}. Please try this number only (1 to 7).");
+                        Console.WriteLine(
+                            $"You entered wrong input = {day}. Please try this number only (1 to 7)."
+                        );
                         break;
                 }
             }
@@ -110,7 +115,7 @@ namespace Backend
 
         public void ForLoopTask()
         {
-            for (int i=0; i<10; i++)
+            for (int i = 0; i < 10; i++)
             {
                 Console.WriteLine(i + "\n");
             }
@@ -120,11 +125,11 @@ namespace Backend
         {
             int number = 0;
 
-            while(number <= 20)
-            {                
-                if(number % 2 == 0)
+            while (number <= 20)
+            {
+                if (number % 2 == 0)
                 {
-                    Console.WriteLine(number);                    
+                    Console.WriteLine(number);
                 }
                 number++;
             }
@@ -134,14 +139,7 @@ namespace Backend
         {
             Console.WriteLine("\n");
 
-            string[] names =
-            {
-                "Arun",
-                "Kumar",
-                "Raj",
-                "Ajay",
-                "Vijay",
-            };
+            string[] names = { "Arun", "Kumar", "Raj", "Ajay", "Vijay" };
 
             for (int i = 0; i < names.Length; i++)
             {
@@ -173,7 +171,9 @@ namespace Backend
 
         public void StudentDetails()
         {
-            Console.WriteLine($"Student Name: {Name}\nStudent Age: {Age}\nStudent Department: {Department}");
+            Console.WriteLine(
+                $"Student Name: {Name}\nStudent Age: {Age}\nStudent Department: {Department}"
+            );
         }
     }
 }
