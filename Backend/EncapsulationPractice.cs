@@ -6,8 +6,8 @@ namespace Backend
 {
     public class EncapsulationPractice
     {
-        private double balance;
-
+        private double balance; 
+        
         public double Balance
         {
             get { return balance; }
@@ -16,7 +16,7 @@ namespace Backend
                 if (value > 0)
                 {
                     balance = value;
-                }
+                }                
             }
         }
 
@@ -32,6 +32,16 @@ namespace Backend
             {
                 Console.WriteLine("Invalid amount");
             }
+        }
+    }
+
+    sealed class Calculator
+    {
+        public int Add(int a, int b)
+        {
+            a = 5 + a;
+            b = 5 + b;
+            return a + b;
         }
     }
 }
