@@ -50,6 +50,28 @@ namespace Backend
 
         static void Main()
         {
+            // Custom Exception Practice            
+            CustomException customException = new CustomException();
+            Console.Write("Enter Amount to Withdraw: ");
+            double withdrawAmount = Convert.ToDouble(Console.ReadLine());
+            customException.Withdarw(withdrawAmount);
+
+            RvsUserIdValidation rvsUserId = new RvsUserIdValidation();
+            Console.Write("Enter User Id: ");
+            string? UserId = Console.ReadLine();
+            rvsUserId.UserNameValidation(UserId);
+
+            RvsUserNameValidation rvsUserName = new RvsUserNameValidation();
+            Console.Write("Enter User Name: ");
+            string? userName = Console.ReadLine();
+            rvsUserName.UserNameValidation(userName);
+
+            RvsUserNameDuplicateValidation rvsUserNameDuplicate = new RvsUserNameDuplicateValidation();
+            Console.Write("Enter User Name for Duplication check: ");
+            string? checkUserName = Console.ReadLine();
+            rvsUserNameDuplicate.UserNameDuplicateValidation(checkUserName);
+
+
             // EventHandler example
             RvsAccountCreate order = new RvsAccountCreate();
             EmailNotificationService email = new EmailNotificationService();
