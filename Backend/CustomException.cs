@@ -7,7 +7,8 @@ namespace Backend
     #region Custom Exception : InsufficientBalanceException
     class InsufficientBalanceException : Exception
     {
-        public InsufficientBalanceException(string msg) : base(msg) { }
+        public InsufficientBalanceException(string msg)
+            : base(msg) { }
     }
 
     class CustomException
@@ -18,7 +19,9 @@ namespace Backend
         {
             if (balance < amount)
             {
-                throw new InsufficientBalanceException("Insufficient balance thrown amount withdraw.");
+                throw new InsufficientBalanceException(
+                    "Insufficient balance thrown amount withdraw."
+                );
             }
 
             balance -= amount;
@@ -31,16 +34,19 @@ namespace Backend
 
     class InvalidRvsUserException : Exception
     {
-        public InvalidRvsUserException(string msg) : base(msg) { }
+        public InvalidRvsUserException(string msg)
+            : base(msg) { }
     }
 
     class RvsUserIdValidation
     {
         public void UserNameValidation(string userId)
         {
-            if(!userId.Contains("RVS-"))
+            if (!userId.Contains("RVS-"))
             {
-                throw new InvalidRvsUserException("UserId is invalid. The Id only must start with RVS-");
+                throw new InvalidRvsUserException(
+                    "UserId is invalid. The Id only must start with RVS-"
+                );
             }
 
             Console.WriteLine("User Validation Successfull");
@@ -51,35 +57,32 @@ namespace Backend
 
     #region Custom Exception : InvalidRvsUserNameException
     class InvalidRvsUserNameException : Exception
-    {        
-        public InvalidRvsUserNameException(string msg) : base(msg) { }
+    {
+        public InvalidRvsUserNameException(string msg)
+            : base(msg) { }
     }
 
     public class RvsUserNameLists
     {
         public List<string> GetUserNames()
         {
-            return new List<string>
-            {
-                "Marlin",
-                "John",
-                "Marcus",
-                "Khaln",
-                "Victory"
-            };
+            return new List<string> { "Marlin", "John", "Marcus", "Khaln", "Victory" };
         }
     }
 
     public class RvsUserNameValidation
     {
         private readonly RvsUserNameLists _rvsUserNameLists = new RvsUserNameLists();
+
         public void UserNameValidation(string userName)
         {
             List<string> userNames = _rvsUserNameLists.GetUserNames();
 
             if (!userNames.Contains(userName))
             {
-                throw new InvalidRvsUserNameException("Entered Invalid Username. Please Enter valid user name.");
+                throw new InvalidRvsUserNameException(
+                    "Entered Invalid Username. Please Enter valid user name."
+                );
             }
 
             Console.WriteLine($"Welcome: {userName}. Username validation successfull.");
@@ -90,7 +93,8 @@ namespace Backend
     #region Custom Exception : DuplicateUserNameException
     class DuplicateUserNameException : Exception
     {
-        public DuplicateUserNameException(string msg) : base(msg) { }
+        public DuplicateUserNameException(string msg)
+            : base(msg) { }
     }
 
     class RvsUserNameDuplicateValidation

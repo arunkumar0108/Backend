@@ -1,4 +1,5 @@
 ﻿using Backend;
+using Backend.Helper;
 
 namespace Backend
 {
@@ -50,7 +51,30 @@ namespace Backend
 
         static void Main()
         {
-            // Custom Exception Practice            
+            // Collections Practice
+            CollectionsPractice collectionsPractice = new CollectionsPractice();
+            collectionsPractice.ArrayPractice();
+            collectionsPractice.ArrayListPractice();
+
+            List<EmployeeDetailsForList> employeeDetailsForList = collectionsPractice.ListPractice();
+            foreach (var employees in employeeDetailsForList)
+            {
+                Console.WriteLine($"Name: {employees.Name}\nDesignation: {employees.Designation}\nAge: {employees.Age}\nCompany: {employees.Company}\n");
+            }
+
+            Dictionary<string, EmployeeDetailsForDictionary> employeeDetailsForDictionaries =
+                collectionsPractice.DictionaryPractice();
+            
+            foreach (var employeeDictionary in employeeDetailsForDictionaries)
+            {
+                Console.WriteLine(
+                    $"KEY: {employeeDictionary.Key}\nName: {employeeDictionary.Value.Username}\nDesignation: {employeeDictionary.Value.Password}\n"
+                        + $"Age: {employeeDictionary.Value.Email}\nCompany: {employeeDictionary.Value.RegisterNumber}\n"
+                );
+            }
+
+
+            // Custom Exception Practice
             CustomException customException = new CustomException();
             Console.Write("Enter Amount to Withdraw: ");
             double withdrawAmount = Convert.ToDouble(Console.ReadLine());
@@ -66,11 +90,11 @@ namespace Backend
             string? userName = Console.ReadLine();
             rvsUserName.UserNameValidation(userName);
 
-            RvsUserNameDuplicateValidation rvsUserNameDuplicate = new RvsUserNameDuplicateValidation();
+            RvsUserNameDuplicateValidation rvsUserNameDuplicate =
+                new RvsUserNameDuplicateValidation();
             Console.Write("Enter User Name for Duplication check: ");
             string? checkUserName = Console.ReadLine();
             rvsUserNameDuplicate.UserNameDuplicateValidation(checkUserName);
-
 
             // EventHandler example
             RvsAccountCreate order = new RvsAccountCreate();
