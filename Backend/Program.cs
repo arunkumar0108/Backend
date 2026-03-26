@@ -64,7 +64,7 @@ namespace Backend
 
             Dictionary<string, EmployeeDetailsForDictionary> employeeDetailsForDictionaries =
                 collectionsPractice.DictionaryPractice();
-            
+
             foreach (var employeeDictionary in employeeDetailsForDictionaries)
             {
                 Console.WriteLine(
@@ -72,6 +72,10 @@ namespace Backend
                         + $"Age: {employeeDictionary.Value.Email}\nCompany: {employeeDictionary.Value.RegisterNumber}\n"
                 );
             }
+
+            collectionsPractice.IEnumerablePractice();
+            collectionsPractice.IQueryablePractice();
+            collectionsPractice.HashsetPracctice();
 
 
             // Custom Exception Practice

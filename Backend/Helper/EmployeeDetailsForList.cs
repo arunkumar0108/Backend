@@ -19,4 +19,23 @@ namespace Backend.Helper
         public string? Email { get; set; }
         public long? RegisterNumber { get; set; }
     }
+    public class EmployeeDetailsForIEnumerable
+    {
+        public string? Name { get; set; }
+        public int? Id { get; set; }
+        public int? Age { get; set; }
+    }
+
+    public class EmployeeDetailsForIQueryable
+    {
+        public List<EmployeeDetailsForIEnumerable> GetEmployees()
+        {
+            return new List<EmployeeDetailsForIEnumerable>
+        {
+            new EmployeeDetailsForIEnumerable { Name = "Jack", Age = 25, Id = 23 },
+            new EmployeeDetailsForIEnumerable { Name = "John", Age = 30, Id = 23 },
+            new EmployeeDetailsForIEnumerable { Name = "Arun", Age = 35, Id = 23 }
+        };
+        }
+    }
 }

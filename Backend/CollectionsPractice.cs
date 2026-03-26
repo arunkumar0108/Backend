@@ -7,6 +7,8 @@ namespace Backend
 {
     public class CollectionsPractice
     {
+
+        EmployeeDetailsForIQueryable employeeDetailsForIQueryable = new EmployeeDetailsForIQueryable();
         public void ArrayPractice()
         {
             // Interger Array Practice
@@ -112,7 +114,7 @@ namespace Backend
                     Username = "Jack",
                     Password = "Jack123",
                     Email = "jack123@gmail.com",
-                    RegisterNumber = 83226821,
+                    RegisterNumber = null,
                 }
             );
             rvsEmployeeDictionary.Add(
@@ -157,6 +159,65 @@ namespace Backend
             );
 
             return rvsEmployeeDictionary;
+        }
+
+        public void IEnumerablePractice()
+        {
+            List<EmployeeDetailsForIEnumerable> employees = new List<EmployeeDetailsForIEnumerable>
+            {
+                new EmployeeDetailsForIEnumerable { Id = 1, Name = "Jack", Age = 25 },
+                new EmployeeDetailsForIEnumerable { Id = 2, Name = "John", Age = 30 },
+                new EmployeeDetailsForIEnumerable { Id = 3, Name = "Arun", Age = 35 },
+                new EmployeeDetailsForIEnumerable { Id = 4, Name = "Sam", Age = 28 }
+            };
+
+            // IEnumerable
+            IEnumerable<EmployeeDetailsForIEnumerable> result = employees.Where(e => e.Age > 28);
+
+            Console.WriteLine("IEnumerable Result:");
+
+            foreach (var emp in result)
+            {
+                Console.WriteLine($"{emp.Name} - {emp.Age}");
+            }
+        }
+
+        public void IQueryablePractice()
+        {
+            IQueryable<EmployeeDetailsForIEnumerable> rvsEmployees = employeeDetailsForIQueryable.GetEmployees().AsQueryable();
+
+            var employees = rvsEmployees.Where(e => e.Age > 25);
+
+            Console.WriteLine("IQueryable Result:");
+
+            foreach (var employee in employees)
+            {
+                Console.WriteLine($"Age above 25: {employee.Age}");
+            }
+        }
+
+        public void HashsetPracctice()
+        {
+            List<string> duplicateList = new List<string>
+            {
+                "Jack", "Jack", "John", "John", "Jim", "Joyel", "Kuhn"
+            };
+
+            HashSet<string> filterUniquerValues = new HashSet<string>(duplicateList);
+
+            foreach (var uniqueValue in filterUniquerValues)
+            {
+                Console.WriteLine(uniqueValue);
+            }
+
+            HashSet<int> hashSet = new HashSet<int>();
+            hashSet.Add(1);
+            hashSet.Add(2);
+            hashSet.Add(3);
+            hashSet.Add(4);
+            hashSet.Add(5);
+
+            Console.WriteLine(hashSet);
         }
     }
 }
