@@ -216,8 +216,36 @@ namespace Backend
             hashSet.Add(3);
             hashSet.Add(4);
             hashSet.Add(5);
+            hashSet.Add(5);
+            hashSet.Add(5);
 
-            Console.WriteLine(hashSet);
+            foreach (var uniqueValue in hashSet)
+            {
+                Console.WriteLine(uniqueValue);
+            }
+
+            // Fetch Duplicate values using Hashset
+            List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 1, 2, 3, 4, 5 };
+
+            HashSet<int> uniques = new HashSet<int>();
+            HashSet<int> duplicates = new HashSet<int>();
+
+            Console.WriteLine("Fetching Duplicate values:");
+
+            foreach (var num in numbers)
+            {
+                if (!uniques.Add(num))
+                {
+                    duplicates.Add(num);
+                }
+            }
+
+            // Add Duplicate values to Hashset and print
+            foreach (var duplicate in duplicates)
+            {
+                Console.WriteLine(duplicate);
+            }
         }
+
     }
 }
