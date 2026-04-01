@@ -51,6 +51,10 @@ namespace Backend
 
         static void Main()
         {
+
+            LinqPractice linqPractice = new LinqPractice();
+            linqPractice.LinqMethodPractice();
+
             // Collections Practice
             CollectionsPractice collectionsPractice = new CollectionsPractice();
             collectionsPractice.ArrayPractice();
