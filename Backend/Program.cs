@@ -52,6 +52,7 @@ namespace Backend
         {
 
             LinqPractice linqPractice = new LinqPractice();
+            linqPractice.LinqWithThenByPractice();
             linqPractice.LinqMethodPractice();
 
             // Collections Practice
