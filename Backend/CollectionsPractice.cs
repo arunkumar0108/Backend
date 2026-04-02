@@ -1,7 +1,5 @@
-﻿using System;
+﻿using Backend.Helper;
 using System.Collections;
-using System.Text;
-using Backend.Helper;
 
 namespace Backend
 {
