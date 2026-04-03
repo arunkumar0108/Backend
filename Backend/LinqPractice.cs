@@ -85,5 +85,53 @@ namespace Backend
                 Console.WriteLine($"Id: {result2.Id} | Name: {result2.Name}");
             }
         }
+
+        public void LinqPracticeGrouping()
+        {
+            List<EmployeeDetailsForIEnumerable> groupingList = new List<EmployeeDetailsForIEnumerable>();
+
+            groupingList.Add(new EmployeeDetailsForIEnumerable
+            {
+                Name = "Jack",
+                Id = 2121,
+                Age = 24
+            });
+            groupingList.Add(new EmployeeDetailsForIEnumerable
+            {
+                Name = "Joel",
+                Id = 2122,
+                Age = 25
+            });
+            groupingList.Add(new EmployeeDetailsForIEnumerable
+            {
+                Name = "Jim",
+                Id = 2121,
+                Age = 24
+            });
+            groupingList.Add(new EmployeeDetailsForIEnumerable
+            {
+                Name = "Jick",
+                Id = 2122,
+                Age = 25
+            });
+            groupingList.Add(new EmployeeDetailsForIEnumerable
+            {
+                Name = "Jai",
+                Id = 2123,
+                Age = 26
+            });
+
+            var grouping = groupingList.GroupBy(group => group.Age).Select(g => new
+            {
+                Name = string.Join(", ", g.Select(x => x.Name)),
+                Age = g.Key,
+                Count = g.Count(),
+            });            
+
+            foreach(var group in grouping)
+            {
+                Console.WriteLine($"Grouped Age wise name and count: {{ Name = {group.Name}, Age = {group.Age}, Count = {group.Count} }}");
+            }
+        }
     }
 }
