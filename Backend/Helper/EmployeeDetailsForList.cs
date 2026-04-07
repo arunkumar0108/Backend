@@ -31,11 +31,11 @@ namespace Backend.Helper
         public List<EmployeeDetailsForIEnumerable> GetEmployees()
         {
             return new List<EmployeeDetailsForIEnumerable>
-        {
-            new EmployeeDetailsForIEnumerable { Name = "Jack", Age = 25, Id = 23 },
-            new EmployeeDetailsForIEnumerable { Name = "John", Age = 30, Id = 23 },
-            new EmployeeDetailsForIEnumerable { Name = "Arun", Age = 35, Id = 23 }
-        };
+            {
+                new EmployeeDetailsForIEnumerable { Name = "Jack", Age = 25, Id = 23 },
+                new EmployeeDetailsForIEnumerable { Name = "John", Age = 30, Id = 23 },
+                new EmployeeDetailsForIEnumerable { Name = "Arun", Age = 35, Id = 23 }
+            };
         }
     }
 }
