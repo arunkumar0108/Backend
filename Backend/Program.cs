@@ -51,6 +51,13 @@ namespace Backend
         static void Main()
         {
 
+            AsynchronousPractice asyncPractice = new AsynchronousPractice();
+            asyncPractice.FullPractice();
+            asyncPractice.MultithreadPractice();
+            asyncPractice.TaskPractice();
+            asyncPractice.GetDataAsync();
+            asyncPractice.GetData();
+
             LinqPractice linqPractice = new LinqPractice();
             linqPractice.LinqPracticeGrouping();
             linqPractice.LinqWithThenByPractice();
