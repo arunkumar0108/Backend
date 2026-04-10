@@ -51,7 +51,12 @@ namespace Backend
         static void Main()
         {
 
+            StaticClassMathPractice.GenericsExample<int>(5, 5);
+            StaticClassMathPractice.GenericsExample<string>("Arun", "Arun");
+            AsynchronousPractice.Staticmethod("Hello");
+
             AsynchronousPractice asyncPractice = new AsynchronousPractice();
+            asyncPractice.Main1();
             asyncPractice.FullPractice();
             asyncPractice.MultithreadPractice();
             asyncPractice.TaskPractice();
